@@ -8,13 +8,13 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from "./context/AuthContext";
+ import { useContext } from "react";
+ import { AuthContext } from "./context/AuthContext";
 
 function App() {
-  // const { user } = useContext(AuthContext);
+   const { user } = useContext(AuthContext);
   return (
-    <Router>
+    <Router> 
       <Switch>
         <Route exact path="/">
           {user ? <Home /> : <Register />}
