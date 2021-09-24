@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const loginCall = async (userCredential, dispatch) => {
-  
   const { REACT_APP_BACKEND_API_LINK } = process.env;
   dispatch({ type: "LOGIN_START" });
   try {

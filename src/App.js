@@ -15,7 +15,7 @@ function App() {
   const { user } = useContext(AuthContext);
   return (
     <Router>
-      <Switch>
+      <Switch> 
         <Route exact path="/">
           {user ? <Home /> : <Register />}
         </Route>

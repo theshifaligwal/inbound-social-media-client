@@ -11,6 +11,7 @@ export default function Post({ post }) {
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const { REACT_APP_BACKEND_API_LINK } = process.env;
   const { user: currentUser } = useContext(AuthContext);
 
   useEffect(() => {
@@ -27,7 +28,9 @@ export default function Post({ post }) {
 
   const likeHandler = () => {
     try {
-      axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
+      axios.put(`${REACT_APP_BACKEND_API_LINK}/posts/${post._id}/like`, {
+        userId: currentUser._id,
+      });
     } catch (err) {}
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
