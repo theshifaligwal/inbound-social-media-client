@@ -28,7 +28,7 @@ export default function Rightbar({ user }) {
       }
     };
     getFriends();
-  }, [user]);
+  }, [user, REACT_APP_BACKEND_API_LINK]);
 
   const handleClick = async () => {
     try {

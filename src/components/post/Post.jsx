@@ -26,7 +26,7 @@ export default function Post({ post }) {
       setUser(res.data);
     };
     fetchUser();
-  }, [post.userId]);
+  }, [post.userId, REACT_APP_BACKEND_API_LINK]);
 
   const likeHandler = () => {
     try {

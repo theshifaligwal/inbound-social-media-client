@@ -21,7 +21,7 @@ export default function Feed({ username }) {
       );
     };
     fetchPosts();
-  }, [username, user._id]);
+  }, [username, user._id, REACT_APP_BACKEND_API_LINK]);
 
   return (
     <div className="feed">
